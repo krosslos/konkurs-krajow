@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konkurs Krajów SP3</title>
+  <style>
+    /* Ogólny wygląd strony */
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #e6f0ff, #cce0ff);
+      color: #003366;
+      text-align: center;
+      padding: 40px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #004080;
+      text-shadow: 2px 2px 4px rgba(0, 64, 128, 0.2);
+      animation: slideDown 1.2s ease;
+    }
+
+    .info-box {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 80, 0.2);
+      display: inline-block;
+      padding: 30px 50px;
+      margin-top: 30px;
+      animation: popIn 1s ease;
+    }
+
+    h2 {
+      color: #004080;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.2rem;
+    }
+
+    li {
+      background-color: #e6f0ff;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 80, 0.1);
+      animation: fadeIn 2s ease;
+    }
+
+    .date {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #00264d;
+      margin-bottom: 15px;
+    }
+
+    /* Animacje */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🌍 Konkurs Krajów SP3 🌍</h1>
+
+  <div class="info-box">
+    <!-- 🔵 TUTAJ WPISZ DATĘ KONKURSU -->
+    <p class="date">📅 Data: <strong>10 października 2025</strong></p>
+
+    <h2>🌎 Kraje biorące udział:</h2>
+
+    <!-- 🔵 TUTAJ WPISZ KRAJE -->
+    <ul>
+      <li>Polska</li>
+      <li>Francja</li>
+      <li>Niemcy</li>
+      <li>Włochy</li>
+      <li>Hiszpania</li>
+      <li>Szwecja</li>
+    </ul>
+  </div>
+
+  <p style="margin-top: 30px; font-size: 0.9rem;">© SP3 – Konkurs Krajów 2025</p>
+</body>
+</html>
