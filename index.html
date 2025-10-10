@@ -3,145 +3,186 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Konkurs Krajów SP3</title>
+  <title>Konkurs Krajów SP3 – Galaktyczna Edycja</title>
   <style>
-    /* Ogólny styl strony */
+    /* 🌈 OGÓLNE USTAWIENIA */
     body {
       font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #dfefff, #c2dbff);
-      color: #002b5c;
-      text-align: center;
-      padding: 50px;
       margin: 0;
-      animation: fadeIn 1.5s ease;
+      padding: 0;
+      text-align: center;
+      background: linear-gradient(270deg, #d0e6ff, #f0f7ff, #cce0ff);
+      background-size: 400% 400%;
+      animation: bgShift 12s ease infinite;
+      color: #002b5c;
+      overflow-x: hidden;
     }
 
     h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       color: #003f91;
-      text-shadow: 2px 2px 6px rgba(0, 64, 128, 0.3);
-      margin-bottom: 40px;
-      animation: slideDown 1.2s ease;
+      text-shadow: 0 0 15px rgba(0, 90, 200, 0.6);
+      margin-top: 50px;
+      animation: glow 2.5s ease-in-out infinite alternate;
     }
 
-    /* Główna karta */
+    /* 🌟 GŁÓWNE OKNO */
     .main-box {
-      background: white;
-      border-radius: 25px;
-      box-shadow: 0 10px 25px rgba(0, 64, 128, 0.25);
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 30px;
+      box-shadow: 0 0 30px rgba(0, 64, 128, 0.4);
       display: inline-block;
-      padding: 40px 60px;
-      animation: popIn 1.2s ease, float 5s ease-in-out infinite;
+      padding: 50px 80px;
+      margin-top: 40px;
+      position: relative;
+      animation: float 6s ease-in-out infinite;
     }
 
-    /* Data */
     .date-box {
-      background: #e6f0ff;
+      font-size: 1.3rem;
+      background: linear-gradient(135deg, #e6f0ff, #cfe4ff);
       border-radius: 20px;
-      padding: 15px 25px;
-      margin-bottom: 25px;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 15px rgba(0, 64, 128, 0.1);
-      display: inline-block;
-      transition: all 0.3s ease;
-    }
-
-    .date-box:hover {
-      transform: scale(1.05);
+      padding: 15px 30px;
       box-shadow: 0 6px 20px rgba(0, 64, 128, 0.2);
+      display: inline-block;
+      margin-bottom: 25px;
+      animation: pulse 3s ease-in-out infinite;
     }
 
-    /* Lista krajów */
+    h2 {
+      color: #004080;
+      margin: 20px 0;
+      font-size: 1.8rem;
+      animation: shimmer 4s ease-in-out infinite;
+    }
+
+    /* 🌍 KRAJE */
     ul {
       list-style: none;
       padding: 0;
       margin: 0;
-      animation: fadeIn 2s ease;
+      animation: fadeIn 2s ease forwards;
     }
 
     li {
-      background: linear-gradient(135deg, #f4f9ff, #e1eeff);
-      border-radius: 18px;
-      margin: 10px 0;
-      padding: 12px 20px;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 10px rgba(0, 64, 128, 0.1);
-      transition: all 0.4s ease;
-      animation: slideUp 0.8s ease forwards;
+      background: linear-gradient(135deg, #e6f3ff, #d2e4ff);
+      border-radius: 20px;
+      margin: 15px 0;
+      padding: 12px 25px;
+      font-size: 1.3rem;
+      box-shadow: 0 5px 20px rgba(0, 64, 128, 0.25);
+      transform: translateX(-100vw);
       opacity: 0;
+      animation: slideInLeft 1.2s ease forwards;
     }
 
-    li:nth-child(1) { animation-delay: 0.2s; }
-    li:nth-child(2) { animation-delay: 0.4s; }
-    li:nth-child(3) { animation-delay: 0.6s; }
-    li:nth-child(4) { animation-delay: 0.8s; }
-    li:nth-child(5) { animation-delay: 1.0s; }
-    li:nth-child(6) { animation-delay: 1.2s; }
+    /* ⏱ OPÓŹNIENIE ANIMACJI KRAJÓW */
+    li:nth-child(1) { animation-delay: 0.3s; }
+    li:nth-child(2) { animation-delay: 0.6s; }
+    li:nth-child(3) { animation-delay: 0.9s; }
+    li:nth-child(4) { animation-delay: 1.2s; }
+    li:nth-child(5) { animation-delay: 1.5s; }
+    li:nth-child(6) { animation-delay: 1.8s; }
 
     li:hover {
-      transform: translateY(-5px) scale(1.03);
-      background: linear-gradient(135deg, #dcebff, #b9d6ff);
-      box-shadow: 0 6px 20px rgba(0, 64, 128, 0.25);
+      transform: scale(1.1) rotate(2deg);
+      background: linear-gradient(135deg, #c8ddff, #a7c9ff);
+      box-shadow: 0 0 25px rgba(0, 64, 128, 0.4);
+      transition: all 0.3s ease;
     }
 
-    /* Stopka */
-    footer {
-      margin-top: 50px;
-      font-size: 0.9rem;
-      color: #003366;
-      opacity: 0.8;
-      animation: fadeIn 2s ease 1.5s forwards;
+    /* ✨ DROBNE ANIMOWANE EFEKTY W TLE */
+    .sparkle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      box-shadow: 0 0 20px white;
+      animation: sparkleMove 8s linear infinite;
     }
 
-    /* ANIMACJE */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    /* 🌊 ANIMACJE KLUCZOWE */
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    @keyframes slideDown {
-      from { transform: translateY(-40px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes popIn {
-      from { transform: scale(0.9); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    @keyframes slideUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #89c4ff, 0 0 20px #89c4ff; }
+      to { text-shadow: 0 0 25px #4da3ff, 0 0 50px #4da3ff; }
     }
 
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(0, 64, 128, 0.2); }
+      50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(0, 64, 128, 0.4); }
+    }
+
+    @keyframes slideInLeft {
+      from { transform: translateX(-120%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes shimmer {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    @keyframes sparkleMove {
+      0% { transform: translateY(0) translateX(0) scale(1); opacity: 1; }
+      50% { transform: translateY(-50px) translateX(20px) scale(1.3); opacity: 0.8; }
+      100% { transform: translateY(-100px) translateX(-20px) scale(0.8); opacity: 0; }
+    }
+
+    footer {
+      margin-top: 40px;
+      color: #004080;
+      font-size: 1rem;
+      opacity: 0.8;
+      animation: fadeIn 3s ease 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
-  <h1>🌍 Konkurs Krajów SP3 🌍</h1>
+  <h1>🌍 KONKURS KRAJÓW SP3 🌍</h1>
 
   <div class="main-box">
-    <!-- 🔵 WPISZ DATĘ TUTAJ -->
+    <!-- 💫 TUTAJ WPISZ DATĘ -->
     <div class="date-box">
-      📅 <strong>KIEDYŚ NAPEWNO</strong>
+      📅 <strong>10 października 2025</strong>
     </div>
 
-    <h2 style="color:#004080; margin-bottom:20px;">🌎 Kraje biorące udział:</h2>
+    <h2>🌎 Kraje biorące udział:</h2>
 
-    <!-- 🔵 WPISZ KRAJE TUTAJ -->
+    <!-- 💫 TUTAJ WPISZ KRAJE -->
     <ul>
-      <li>----</li>
-      <li>----</li>
-      <li>----</li>
-      <li>----</li>
-      <li>----</li>
-      <li>----</li>
+      <li>🇵🇱 Polska</li>
+      <li>🇫🇷 Francja</li>
+      <li>🇩🇪 Niemcy</li>
+      <li>🇮🇹 Włochy</li>
+      <li>🇪🇸 Hiszpania</li>
+      <li>🇸🇪 Szwecja</li>
     </ul>
+
+    <!-- ✨ Iskierki -->
+    <div class="sparkle" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+    <div class="sparkle" style="top: 40%; left: 70%; animation-delay: 1s;"></div>
+    <div class="sparkle" style="top: 70%; left: 30%; animation-delay: 2s;"></div>
+    <div class="sparkle" style="top: 80%; left: 80%; animation-delay: 3s;"></div>
+    <div class="sparkle" style="top: 20%; left: 50%; animation-delay: 4s;"></div>
   </div>
 
-  <footer> KRZYSZTOF KRÓL 2025</footer>
+  <footer>© SP3 – Konkurs Krajów 2025 ✨</footer>
 </body>
 </html>
